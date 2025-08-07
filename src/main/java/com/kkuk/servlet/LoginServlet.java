@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/loginOk")
+@WebServlet("/*.do")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		doGet(request, response); // 위에있는 doget 의 request, response을 가져와서 적용됨 ㅇㅇ 개이득
 	}
 
 }
