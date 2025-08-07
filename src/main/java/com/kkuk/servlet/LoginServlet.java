@@ -43,9 +43,12 @@ public class LoginServlet extends HttpServlet {
 		} else { // 로그인 실패 시
 			//response.sendRedirect("loginFail.jsp"); // 로그인 실패페이지로 이동
 			request.setAttribute("failid", mid); // failid = 로그인실패한 아이디 request객체에 아이디를 담음
-			request.getRequestDispatcher("loginFail.jsp").forward(request, response); 
+			//request.getRequestDispatcher("loginFail.jsp").forward(request, response); 
 			// request에 담은 아이디를 forward를 이용해 loginFail로보냄 
 			// 이후 loginFail 에서 자바코드없이 아이디값 사용가능
+			request.setAttribute("errorMsg", "로그인에 실패하였습니다. <br> 아이디와 비밀번호를 다시 한번 확인해주세요.");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+			// 로그인 실패 시 경고메세지 하단에 출력 
 		}
 	}
 
