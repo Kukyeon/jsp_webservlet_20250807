@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/*.do")
+//@WebServlet("/*.do")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
