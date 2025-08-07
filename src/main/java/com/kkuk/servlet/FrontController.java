@@ -118,8 +118,9 @@ public class FrontController extends HttpServlet {
 			mdto.add(new memberdto("redtiger", "이몽룡", "31", "2025-06-20"));
 			
 			request.setAttribute("memberList", mdto);
-			session = request.getSession();
-			request.setAttribute("mid", session.getAttribute("sid"));
+			
+			session = request.getSession(); // request 객체에 저장된걸 session으로  옮겨
+			request.setAttribute("mid", session.getAttribute("sid")); // request 객체에 값 싣기
 			viewPage = "memberList.jsp";
 			
 		}

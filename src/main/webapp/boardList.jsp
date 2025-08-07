@@ -109,10 +109,13 @@
 	
 	<br>
 	<br>
+	<!--  뒤로가기  -->
 	<a href="welcome.do">이전으로 돌아가기</a>
+	<!-- 또는 ,<a href="javascript:history.go(-1);">이전으로 돌아가기</a>  도 가능합니다-->
+	<input type="button" value="뒤로가기" onclick="javascript:history.go(-1)">
 	<button onclick="if(confirm('정말 뒤로 가시겠습니까?')) history.back();" style="margin-left:10px;">
     확인 후 뒤로가기
-</button>
+	</button>
 	
 	
 	
