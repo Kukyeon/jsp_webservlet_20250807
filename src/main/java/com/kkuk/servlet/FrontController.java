@@ -85,6 +85,8 @@ public class FrontController extends HttpServlet {
 		} else if(command.equals("/login.do")) { // 로그인페이지로 이동
 				viewPage = "login.jsp";
 		} else if(command.equals("/welcome.do")) { // 웰컴페이지로 이동
+			session = request.getSession();
+			request.setAttribute("mid", session.getAttribute("sid"));
 			viewPage = "welcome.jsp";
 		} else if(command.equals("/logout.do")) {
 			session = request.getSession(); // 세션 생성방법 
@@ -102,7 +104,8 @@ public class FrontController extends HttpServlet {
 			boardList.add(new BoardDto("안녕하세요. 다섯번째글입니다..", "오순신", "2025-08-05"));
 			
 			request.setAttribute("boardList", boardList); // request 객체에 게시판 목록 싣기
-			
+			session = request.getSession();
+			request.setAttribute("mid", session.getAttribute("sid"));
 			viewPage = "boardList.jsp";
 		} else if(command.equals("/member.do")) {
 			
@@ -115,7 +118,8 @@ public class FrontController extends HttpServlet {
 			mdto.add(new memberdto("redtiger", "이몽룡", "31", "2025-06-20"));
 			
 			request.setAttribute("memberList", mdto);
-			
+			session = request.getSession();
+			request.setAttribute("mid", session.getAttribute("sid"));
 			viewPage = "memberList.jsp";
 			
 		}
