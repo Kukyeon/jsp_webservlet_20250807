@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class DoTest
  */
-@WebServlet("*.do")
+//@WebServlet("*.do")
 public class DoTest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,9 +46,9 @@ public class DoTest extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String uri = request.getRequestURI(); // 클라이언트가 요청한 uri
-		// uri -> 나중에 주소 입력해놓기
+		// uri -> http://localhost:8888/jsp_webServlet-20250807/login.do
 		String con = request.getContextPath();
-		// con -> 주소입력
+		// con -> http://localhost:8888/jsp_webServlet-20250807/
 		String command = uri.substring(con.length());
 		// command -> /login.do
 		
@@ -76,6 +76,7 @@ public class DoTest extends HttpServlet {
 				request.setAttribute("errorMsg", "로그인에 실패하였습니다. <br> 아이디와 비밀번호를 다시 한번 확인해주세요.");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 				// 로그인 실패 시 경고메세지 하단에 출력 
+				viewPage = "login.jsp";
 			}
 			viewPage = "loginOk.jsp";
 		}else if(command.equals("/welcome.do")) {
